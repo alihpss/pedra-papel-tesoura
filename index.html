@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="/CSS/reset.css">
+  <link rel="stylesheet" href="/CSS/estilo.css">
   
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <title>Rock, Paper, Scissors</title>
 
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
+  <header>
+    <div id="inicio">
+      <img src="/images/logo.svg" alt="">
+    </div>
+    <div id="score">
+      <p>SCORE</p>
+      <p id="contador">12</p>
+    </div>
+  </header>
 
+  <main>
+    <section>
+      <img src="/images/bg-triangle.svg" alt="" id="fundo">
+
+
+      <div id="elementos">
+        <div id="img-papel">
+          <img src="/images/icon-paper.svg" alt="">
+        </div>
+        <div id="img-tesoura">
+          <img src="/images/icon-scissors.svg" alt="">
+        </div>
+        <!--<div id="img-pedra">
+          <img src="/images/icon-rock.svg" alt="">
+        </div>-->
+      </div>
+    </section>
+  </main>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

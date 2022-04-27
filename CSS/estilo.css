@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Epilogue:wght@760&display=swap');
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    background: radial-gradient(#1f3756, #141539);
+    font-family: 'Barlow Semi Condensed';
+}
+
+header {
+    width: 45%;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 3px solid #606e85;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#inicio {
+    width: 50%;
+}
+
+#score {
+    background: white;
+    font-size: 15px;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    color: #2a46c0;
+    padding-top: 15px;
+    box-shadow: 3px 3px 3px  #141539;
+}
+
+
+#contador {
+    font-size: 60px;
+    letter-spacing: 0px;
+    color: #606e85;
+}
+
+section {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#fundo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+
