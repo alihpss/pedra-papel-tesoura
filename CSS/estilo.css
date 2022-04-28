@@ -92,13 +92,10 @@ section div img {
 }
 
 #div-papel img, #div-tesoura img{
-
+    background: white;
     padding: 7%;
     border-radius: 50%;
     border: 15px solid hsl(230, 89%, 62%)
-    background: #CE5937;
-
-background: linear-gradient(to right, #CE5937 0%, #1C6EA4 55%, #C59237 100%);
 }
 
 #div-tesoura img {
