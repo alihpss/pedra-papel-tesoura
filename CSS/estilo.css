@@ -12,7 +12,7 @@ body {
 
 header {
     width: 45%;
-    margin: 60px auto;
+    margin: 8px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -46,15 +46,74 @@ header {
 
 section {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 20px;
+}
+
+#elementos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#img-fundo {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 40%;
+    margin: auto;
 }
 
 #fundo {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
+    width: 60%;
+    margin-top: 17%;
 }
+
+#div-papel {
+    text-align: end;
+}
+
+#div-papel, #div-tesoura{
+    width: 45%;
+    margin-bottom: 6%;
+    position: relative;
+}
+
+#div-tesoura {
+    text-align: initial;
+}
+
+#div-pedra {
+    width: 100%;
+    position: relative;
+}
+
+section div img {
+    width: 30%;
+}
+
+#div-papel img, #div-tesoura img{
+
+    padding: 7%;
+    border-radius: 50%;
+    border: 15px solid hsl(230, 89%, 62%)
+    background: #CE5937;
+
+background: linear-gradient(to right, #CE5937 0%, #1C6EA4 55%, #C59237 100%);
+}
+
+#div-tesoura img {
+    border: 15px solid hsl(40, 84%, 53%)
+}
+
+#logo-pedra {
+    width: 14%;
+    background: white;
+    padding: 3%;
+    border-radius: 50%;
+    border: 15px solid hsl(349, 70%, 56%);
+} 
+
+
 
 
 
