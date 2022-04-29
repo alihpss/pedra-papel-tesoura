@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Epilogue:wght@760&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=Epilogue:wght@760&display=swap');
 
 * {
     box-sizing: border-box;
@@ -44,7 +44,8 @@ header {
     color: #606e85;
 }
 
-section {
+#principal {
+    display: none;
     text-align: center;
     margin-top: 20px;
 }
@@ -87,10 +88,6 @@ section {
     position: relative;
 }
 
-section div img {
-    width: 30%;
-}
-
 #div-papel img, #div-tesoura img{
     background: #dddddd;
     padding: 5%;
@@ -99,20 +96,7 @@ section div img {
     box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);
 }
 
-#div-papel::after, #div-tesoura::after, #div-pedra::after {
-    content: '';
-    background: black;
-    width: 30%;
-    padding: 0px;
-    background: transparent;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: 0;
-    border-radius: 50%;
-    box-shadow: inset 0px -10px 1px 0px rgb(0 0 0 / 29%);
-}
+
 
 #div-tesoura::after {
     left: 0;
@@ -123,7 +107,7 @@ section div img {
 }
 
 #logo-pedra {
-    width: 14%;
+    width: 12.5%;
     background: white;
     padding: 3%;
     border-radius: 50%;
@@ -137,7 +121,65 @@ section div img {
     margin: auto;
 }
 
+#botao-regras {
+    width: 8em;
+    background: #161b3e;
+    color: #dddddd;
+    font-weight: 600;
+    border: 2px solid #adaaaa;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: 3em;
+    float: right;
+    margin-right: 3%;
+}
+
+#botao-regras:hover {
+    cursor: pointer;
+}
+
+#modal {
+    display: none;
+    margin: auto;
+    width: 34%;
+    height: 30vmax;
+    text-align: initial;
+    font-size: 32px;
+    padding: 1% 4%;
+    position: absolute;
+    background: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8%;
+}
+.icone1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 6%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5a6270;
+}
+
+#icone-fechar {
+    width: auto;
+}
+
+#icone-fechar:hover {
+    cursor: pointer;
+    filter: brightness(0);
+}
 
 
-
-
+#icone-regras{
+    width: 60%;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

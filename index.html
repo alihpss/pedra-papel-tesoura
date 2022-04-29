@@ -25,7 +25,7 @@
   </header>
 
   <main>
-    <section>
+    <section id="principal">
 
       <div id="elementos">
         <div id="img-fundo">
@@ -37,7 +37,7 @@
         </div>
 
         <div id="div-tesoura">
-          <img src="/images/icon-scissors.svg" alt="">
+          <img src="/images/icon-scissors.svg" alt="" id="img-tesoura">
         </div>
 
         <div id="div-pedra">
@@ -45,13 +45,37 @@
         </div>
 
       </div>
-
     </section>
+
+    <section>
+      <div id="modal">
+        <div class="icone1">
+        <span>Rules</span>
+          <img src="/images/icon-close.svg" alt="" id="icone-fechar" onclick="fecharRegras()">
+        </div>
+        <img src="/images/image-rules.svg" alt="" id="icone-regras">
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
   </main>
+
+  <footer>
+    <input type="button" value="rules" id=botao-regras onclick="mostraRegras()">
+  </footer>
   
   <!--<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.-->
   </div>
+
+  <script src="/JS/funcionalidade.js"></script>
 </body>
 </html>
