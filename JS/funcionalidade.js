@@ -1,32 +1,69 @@
-
 let contador = 0
 let meuScore = document.getElementById('contador');
 meuScore.textContent = contador
 
+const imagens = [
+    '/images/icon-paper.svg',
+    '/images/icon-scissors.svg',
+    '/images/icon-rock.svg'
+]
 
-
-
+function selecionarModal (display) {
+    let modalRegras = document.querySelector('#modal');
+    modalRegras.style.display = display;
+}
 function mostraRegras() {
     selecionarModal('block')
-    console.log(NumeroAleatorio(3));
 };
 
 function fecharRegras (){
     selecionarModal('none')
 };
 
-function selecionarModal (display) {
-    let modalRegras = document.querySelector('#modal');
-    modalRegras.style.display = display;
+
+function abrirTelaDuelo () {
+    let telaInicial = document.getElementById('principal');
+    let telaDuelo = document.getElementById('layout-desafio');
+    telaInicial.style.display = 'none'
+    telaDuelo.style.display = 'flex'
 }
+
 
 function NumeroAleatorio(max) {
     return Math.floor(Math.random() * max + 1)
 }
 
-let elementoEscolhido = document.querySelector('#img-papel');
-elementoEscolhido.onclick = function () {
-    console.log(elementoEscolhido);
-}
+let elementos = [
+    document.querySelector('#img-papel'),
+    document.querySelector('#img-tesoura'),
+    document.querySelector('#logo-pedra')
+];
+
+//for (let i = 0; i < elementos.length; i++){
+ //   elementos [i] = i 
+//}
+
+//for (let i = 0; i < elementos.length; i++) {
+//    let elemento = elementos [i]
+//    let imagemUser = imagens[i]
+
+//    elemento.setAttribute('src', imagemUser)
+
+
+//}
+
+
+elementos.forEach(function(elementoEscolhido) {
+    elementoEscolhido.onclick = function () {
+        abrirTelaDuelo();
+        //let imagemUser = imagens[i]
+        console.log(elementoEscolhido);
+
+        elementoEscolhido.setAttribute('src', imagemUser)
+    
+        //console.log(elementoEscolhido);
+    }
+});
+
 
 

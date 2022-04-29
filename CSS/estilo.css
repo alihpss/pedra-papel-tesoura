@@ -45,7 +45,7 @@ header {
 }
 
 #principal {
-    display: none;
+    display: block;
     text-align: center;
     margin-top: 20px;
 }
@@ -88,7 +88,7 @@ header {
     position: relative;
 }
 
-#div-papel img, #div-tesoura img{
+.papel, .tesoura , .pedra{
     background: #dddddd;
     padding: 5%;
     border-radius: 50%;
@@ -96,19 +96,20 @@ header {
     box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);
 }
 
-
-
 #div-tesoura::after {
     left: 0;
 }
 
-#div-tesoura img {
+.tesoura {
     border: 1.8vmax solid hsl(40, 84%, 53%)
 }
 
 #logo-pedra {
     width: 12.5%;
-    background: white;
+}
+
+#logo-pedra {
+    background: #dddddd;
     padding: 3%;
     border-radius: 50%;
     border: 1.8vmax solid hsl(349, 70%, 56%);
@@ -183,3 +184,43 @@ header {
     right: 0;
     margin: auto;
 }
+
+#layout-desafio {
+    display: none;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+section div p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#jogador, #cpu {
+    width: 30%;
+    text-align: center;
+}
+
+#jogador img, #cpu img {
+    margin-top: 55px;
+    box-shadow: inset 0px 0px 10px 50px #1e1d1d78;
+    border-radius: 50%;
+    padding: 10%;
+    width: 50%;
+}
+
+#cpu img {
+    transition:all 1s;
+}
+
+.pedra {
+    background: white;
+    padding: 3%;
+    border-radius: 50%;
+    border: 1.8vmax solid hsl(349, 70%, 56%);
+    box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);
+}
+
