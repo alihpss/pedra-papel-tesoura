@@ -20,14 +20,12 @@ function fecharRegras (){
     selecionarModal('none')
 };
 
-
 function abrirTelaDuelo () {
     let telaInicial = document.getElementById('principal');
     let telaDuelo = document.getElementById('layout-desafio');
     telaInicial.style.display = 'none'
     telaDuelo.style.display = 'flex'
 }
-
 
 function NumeroAleatorio(max) {
     return Math.floor(Math.random() * max + 1)
@@ -39,9 +37,9 @@ let elementos = [
     document.querySelector('#logo-pedra')
 ];
 
-//for (let i = 0; i < elementos.length; i++){
- //   elementos [i] = i 
-//}
+for (let i = 0; i < elementos.length; i++){
+   elementos [i].value = i;
+}
 
 //for (let i = 0; i < elementos.length; i++) {
 //    let elemento = elementos [i]
@@ -56,10 +54,13 @@ let elementos = [
 elementos.forEach(function(elementoEscolhido) {
     elementoEscolhido.onclick = function () {
         abrirTelaDuelo();
-        //let imagemUser = imagens[i]
-        console.log(elementoEscolhido);
+        let imagemUser = document.getElementById('escolha-user')
+        imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
 
-        elementoEscolhido.setAttribute('src', imagemUser)
+        
+
+
+        //elementoEscolhido.setAttribute('src', imagemUser)
     
         //console.log(elementoEscolhido);
     }
