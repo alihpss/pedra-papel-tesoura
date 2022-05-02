@@ -37,6 +37,12 @@ let elementos = [
     document.querySelector('#logo-pedra')
 ];
 
+let classes = [
+    '.papel',
+    '.tesoura',
+    '.pedra'
+];
+
 for (let i = 0; i < elementos.length; i++){
    elementos [i].value = i;
 }
@@ -51,14 +57,15 @@ for (let i = 0; i < elementos.length; i++){
 //}
 
 
+
 elementos.forEach(function(elementoEscolhido) {
     elementoEscolhido.onclick = function () {
         abrirTelaDuelo();
         let imagemUser = document.getElementById('escolha-user')
         imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
-
+        imagemUser.classList.add(classes[elementoEscolhido.value])
         
-
+        console.log('ss');
 
         //elementoEscolhido.setAttribute('src', imagemUser)
     
