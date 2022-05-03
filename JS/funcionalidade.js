@@ -38,9 +38,9 @@ let elementos = [
 ];
 
 let classes = [
-    '.papel',
-    '.tesoura',
-    '.pedra'
+    'papel',
+    'tesoura',
+    'pedra'
 ];
 
 for (let i = 0; i < elementos.length; i++){

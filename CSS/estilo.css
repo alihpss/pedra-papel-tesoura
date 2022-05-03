@@ -100,10 +100,6 @@ header {
     left: 0;
 }
 
-.tesoura {
-    border: 1.8vmax solid hsl(40, 84%, 53%)
-}
-
 #logo-pedra {
     width: 12.5%;
 }
@@ -120,6 +116,18 @@ header {
     width: 14%;
     left: 0;
     margin: auto;
+}
+
+.tesoura {
+    border: 1.8vmax solid hsl(40, 84%, 53%)
+}
+
+.pedra {
+    background: white;
+    padding: 3%;
+    border-radius: 50%;
+    border: 1.8vmax solid hsl(349, 70%, 56%);
+    box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);
 }
 
 #botao-regras {
@@ -204,23 +212,23 @@ section div p {
     text-align: center;
 }
 
-#jogador img, #cpu img {
+.fundosEscolhas {
     margin-top: 55px;
-    box-shadow: inset 0px 0px 10px 50px #1e1d1d78;
     border-radius: 50%;
     padding: 10%;
     width: 50%;
+}
+
+.fundosEscolhas::before{
+    content: '';
+    top: 4vmax;
+    position: relative;
+    border-radius: 50%;
+    border: 6vmax solid #1e1d1d78;
 }
 
 #cpu img {
     transition:all 1s;
 }
 
-.pedra {
-    background: white;
-    padding: 3%;
-    border-radius: 50%;
-    border: 1.8vmax solid hsl(349, 70%, 56%);
-    box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);
-}
 
