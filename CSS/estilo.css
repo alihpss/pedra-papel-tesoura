@@ -84,8 +84,9 @@ header {
 }
 
 #div-pedra {
-    width: 100%;
+    width: 45%;
     position: relative;
+    margin-left: 27%;
 }
 
 .papel, .tesoura , .pedra{
@@ -101,12 +102,8 @@ header {
 }
 
 #logo-pedra {
-    width: 12.5%;
-}
-
-#logo-pedra {
     background: #dddddd;
-    padding: 3%;
+    padding: 5%;
     border-radius: 50%;
     border: 1.8vmax solid hsl(349, 70%, 56%);
     box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);

@@ -8,6 +8,43 @@ const imagens = [
     '/images/icon-rock.svg'
 ]
 
+let elementos = [
+    document.querySelector('#img-papel'),
+    document.querySelector('#img-tesoura'),
+    document.querySelector('#logo-pedra')
+];
+
+for (let i = 0; i < elementos.length; i++){
+    elementos [i].value = i;
+ }
+
+let classes = [
+    'papel',
+    'tesoura',
+    'pedra'
+];
+
+
+
+elementos.forEach(function(elementoEscolhido) {
+    elementoEscolhido.onclick = function () {
+        abrirTelaDuelo();
+        let imagemUser = document.getElementById('escolha-user')
+        imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
+        imagemUser.classList.add(classes[elementoEscolhido.value])
+        
+
+
+        let imagemCpu = document.getElementById('escolha-cpu')
+        imagemCpu.value = NumeroAleatorio(3)
+        imagemCpu.setAttribute('src' , imagens[imagemCpu.value])
+        imagemCpu.classList.add(classes[imagemCpu.value])
+
+    }
+});
+
+
+
 function selecionarModal (display) {
     let modalRegras = document.querySelector('#modal');
     modalRegras.style.display = display;
@@ -28,50 +65,8 @@ function abrirTelaDuelo () {
 }
 
 function NumeroAleatorio(max) {
-    return Math.floor(Math.random() * max + 1)
+    return Math.floor(Math.random() * max)
 }
-
-let elementos = [
-    document.querySelector('#img-papel'),
-    document.querySelector('#img-tesoura'),
-    document.querySelector('#logo-pedra')
-];
-
-let classes = [
-    'papel',
-    'tesoura',
-    'pedra'
-];
-
-for (let i = 0; i < elementos.length; i++){
-   elementos [i].value = i;
-}
-
-//for (let i = 0; i < elementos.length; i++) {
-//    let elemento = elementos [i]
-//    let imagemUser = imagens[i]
-
-//    elemento.setAttribute('src', imagemUser)
-
-
-//}
-
-
-
-elementos.forEach(function(elementoEscolhido) {
-    elementoEscolhido.onclick = function () {
-        abrirTelaDuelo();
-        let imagemUser = document.getElementById('escolha-user')
-        imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
-        imagemUser.classList.add(classes[elementoEscolhido.value])
-        
-        console.log('ss');
-
-        //elementoEscolhido.setAttribute('src', imagemUser)
-    
-        //console.log(elementoEscolhido);
-    }
-});
 
 
 
