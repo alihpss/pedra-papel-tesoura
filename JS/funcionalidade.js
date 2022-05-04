@@ -34,27 +34,34 @@ elementos.forEach(function(elementoEscolhido) {
         imagemUser.classList.add(classes[elementoEscolhido.value])
         
 
+        setTimeout(function () {
+            let fundoCpu = document.getElementById('fundo-cpu');
+            fundoCpu.style.display = 'none'
 
-        let imagemCpu = document.getElementById('escolha-cpu')
-        imagemCpu.value = NumeroAleatorio(3)
-        imagemCpu.setAttribute('src' , imagens[imagemCpu.value])
-        imagemCpu.classList.add(classes[imagemCpu.value])
-
+            let imagemCpu = document.getElementById('escolha-cpu')
+            imagemCpu.value = NumeroAleatorio(3)
+            imagemCpu.setAttribute('src' , imagens[imagemCpu.value])
+            imagemCpu.classList.add(classes[imagemCpu.value])
+            imagemCpu.style.opacity = 0.9
+        }, 1000);
+     
     }
 });
 
 
 
-function selecionarModal (display) {
+function funcaoModal (num1 , num2) {
     let modalRegras = document.querySelector('#modal');
-    modalRegras.style.display = display;
+    modalRegras.style.opacity = num1;
+    modalRegras.style.zIndex = num2;
+
 }
 function mostraRegras() {
-    selecionarModal('block')
+    funcaoModal(1,2)
 };
 
 function fecharRegras (){
-    selecionarModal('none')
+    funcaoModal(0,-1)
 };
 
 function abrirTelaDuelo () {

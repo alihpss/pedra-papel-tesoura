@@ -97,6 +97,7 @@ header {
     box-shadow: inset 0px 9px 0px 0px rgb(0 0 0 / 17%);
 }
 
+
 #div-tesoura::after {
     left: 0;
 }
@@ -146,7 +147,7 @@ header {
 }
 
 #modal {
-    display: none;
+    
     margin: auto;
     width: 34%;
     height: 30vmax;
@@ -160,6 +161,9 @@ header {
     left: 0;
     right: 0;
     border-radius: 8%;
+    z-index: -1;
+    opacity: 0;
+    transition: all 1s;
 }
 .icone1 {
     display: flex;
@@ -214,18 +218,22 @@ section div p {
     border-radius: 50%;
     padding: 10%;
     width: 50%;
+
 }
 
-.fundosEscolhas::before{
+#fundo-cpu{
     content: '';
-    top: 4vmax;
+    margin-top: 55px;
     position: relative;
+    width: 10px;
+    margin-left: 9vmax;
     border-radius: 50%;
     border: 6vmax solid #1e1d1d78;
 }
 
-#cpu img {
-    transition:all 1s;
+#escolha-cpu {
+    transition:ease 2s;
+    opacity: 0;
 }
 
 
