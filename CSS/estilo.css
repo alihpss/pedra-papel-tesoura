@@ -232,7 +232,7 @@ section div p {
 }
 
 #escolha-cpu {
-    transition:ease 2s;
+    /*transition:ease 2s;*/
     opacity: 0;
 }
 

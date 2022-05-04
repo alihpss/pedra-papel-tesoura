@@ -34,16 +34,23 @@ elementos.forEach(function(elementoEscolhido) {
         imagemUser.classList.add(classes[elementoEscolhido.value])
         
 
-        setTimeout(function () {
+        setInterval(function () {
             let fundoCpu = document.getElementById('fundo-cpu');
             fundoCpu.style.display = 'none'
 
             let imagemCpu = document.getElementById('escolha-cpu')
             imagemCpu.value = NumeroAleatorio(3)
+            if (imagemCpu.value == 0) {
+                imagemCpu.classList.remove('pedra','tesoura')
+            } else if (imagemCpu.value == 1) {
+                imagemCpu.classList.remove('pedra','papel')
+            } else if (imagemCpu.value == 2) {
+                imagemCpu.classList.remove('papel','tesoura')
+            }
             imagemCpu.setAttribute('src' , imagens[imagemCpu.value])
             imagemCpu.classList.add(classes[imagemCpu.value])
             imagemCpu.style.opacity = 0.9
-        }, 1000);
+        }, 100);
      
     }
 });
