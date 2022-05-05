@@ -1,9 +1,9 @@
 let telaInicial = document.getElementById('principal');
 let telaDuelo = document.getElementById('layout-desafio');
 
-let contador = 0
+let contador = 0;
+
 let meuScore = document.getElementById('contador');
-meuScore.textContent = contador
 
 const imagens = [
     '/images/icon-paper.svg',
@@ -30,6 +30,7 @@ let classes = [
 elementos.forEach(function(elementoEscolhido) {
     elementoEscolhido.onclick = function () {
         abrirTelaDuelo();
+
         let imagemUser = document.getElementById('escolha-user')
         imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
 
@@ -71,19 +72,22 @@ elementos.forEach(function(elementoEscolhido) {
             clearInterval(movimentoAleatorio);
             divResultado.style.display = 'flex';
 
-            console.log(elementoEscolhido.value, imagemCpu.value );
             if (elementoEscolhido.value == imagemCpu.value) {
-                console.log('aaa');
                 textoResultado.textContent = 'empate'
+
             } else if (resultado(elementoEscolhido, imagemCpu)) {
                 textoResultado.textContent = 'vitória'
                 imagemUser.classList.add('vitoria')
-                meuScore.textContent++
+                contador++
+
             } else if (!resultado(elementoEscolhido, imagemCpu)) {
                 textoResultado.textContent = 'derrota'
                 imagemCpu.classList.add('vitoria')
-                meuScore.textContent--
+                contador--
             }
+
+            meuScore.innerHTML = contador
+            
         }, 2000);
 
         setTimeout(function() {
@@ -112,7 +116,6 @@ function abrirTelaDuelo () {
 function NumeroAleatorio(max) {
     return Math.floor(Math.random() * max)
 }
-
 
 function funcaoModal (num1 , num2) {
     let modalRegras = document.querySelector('#modal');
