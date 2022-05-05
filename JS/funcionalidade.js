@@ -1,3 +1,6 @@
+let telaInicial = document.getElementById('principal');
+let telaDuelo = document.getElementById('layout-desafio');
+
 let contador = 0
 let meuScore = document.getElementById('contador');
 meuScore.textContent = contador
@@ -29,16 +32,27 @@ elementos.forEach(function(elementoEscolhido) {
         abrirTelaDuelo();
         let imagemUser = document.getElementById('escolha-user')
         imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
+
+        imagemUser.classList.remove('papel', 'pedra', 'tesoura')
         imagemUser.classList.add(classes[elementoEscolhido.value])
-        
         
         let imagemCpu = document.getElementById('escolha-cpu');
         imagemCpu.style.opacity = 0.9
 
+        imagemCpu.classList.remove('vitoria')
+        imagemUser.classList.remove('vitoria')
+
+        let divResultado = document.querySelector('#resultado');
+        divResultado.style.display = 'none';
+        divResultado.style.opacity = 0;
+        let textoResultado = divResultado.querySelector('.texto-resultado')
+
         let movimentoAleatorio = setInterval(function () {
             let fundoCpu = document.getElementById('fundo-cpu');
             fundoCpu.style.display = 'none'
+
             imagemCpu.value = NumeroAleatorio(3)
+
             if (imagemCpu.value == 0) {
                 imagemCpu.classList.remove('pedra','tesoura')
             } else if (imagemCpu.value == 1) {
@@ -51,8 +65,7 @@ elementos.forEach(function(elementoEscolhido) {
 
         }, 100);
 
-        let divResultado = document.querySelector('#resultado');
-        let textoResultado = divResultado.querySelector('.texto-resultado')
+
 
         setTimeout(function() {
             clearInterval(movimentoAleatorio);
@@ -64,9 +77,11 @@ elementos.forEach(function(elementoEscolhido) {
                 textoResultado.textContent = 'empate'
             } else if (resultado(elementoEscolhido, imagemCpu)) {
                 textoResultado.textContent = 'vitória'
+                imagemUser.classList.add('vitoria')
                 meuScore.textContent++
             } else if (!resultado(elementoEscolhido, imagemCpu)) {
                 textoResultado.textContent = 'derrota'
+                imagemCpu.classList.add('vitoria')
                 meuScore.textContent--
             }
         }, 2000);
@@ -89,6 +104,16 @@ function resultado (elementoEscolhido, imagemCpu) {
     }
 }
 
+function abrirTelaDuelo () {
+    telaInicial.style.display = 'none'
+    telaDuelo.style.display = 'flex'
+}
+
+function NumeroAleatorio(max) {
+    return Math.floor(Math.random() * max)
+}
+
+
 function funcaoModal (num1 , num2) {
     let modalRegras = document.querySelector('#modal');
     modalRegras.style.opacity = num1;
@@ -103,15 +128,9 @@ function fecharRegras (){
     funcaoModal(0,-1)
 };
 
-function abrirTelaDuelo () {
-    let telaInicial = document.getElementById('principal');
-    let telaDuelo = document.getElementById('layout-desafio');
-    telaInicial.style.display = 'none'
-    telaDuelo.style.display = 'flex'
-}
-
-function NumeroAleatorio(max) {
-    return Math.floor(Math.random() * max)
+function jogarNovamente () {
+    telaInicial.style.display = 'block'
+    telaDuelo.style.display = 'none'
 }
 
 
