@@ -232,8 +232,32 @@ section div p {
 }
 
 #escolha-cpu {
-    /*transition:ease 2s;*/
+    transition:ease 1s;
     opacity: 0;
+}
+
+#resultado {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition:all 2s;
+}
+
+.texto-resultado {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 3em;
+}
+
+#botao-resultado {
+    font-size: 11px;
+    text-transform: uppercase;
+    height: 2vmax;
+    border: none;
+    box-shadow: 0px 0px 20px 2px black;
+    border-radius: 6px;
+    color: #141539;
 }
 
 

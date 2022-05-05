@@ -24,8 +24,6 @@ let classes = [
     'pedra'
 ];
 
-
-
 elementos.forEach(function(elementoEscolhido) {
     elementoEscolhido.onclick = function () {
         abrirTelaDuelo();
@@ -33,12 +31,13 @@ elementos.forEach(function(elementoEscolhido) {
         imagemUser.setAttribute('src' , imagens[elementoEscolhido.value])
         imagemUser.classList.add(classes[elementoEscolhido.value])
         
+        
+        let imagemCpu = document.getElementById('escolha-cpu');
+        imagemCpu.style.opacity = 0.9
 
-        setInterval(function () {
+        let movimentoAleatorio = setInterval(function () {
             let fundoCpu = document.getElementById('fundo-cpu');
             fundoCpu.style.display = 'none'
-
-            let imagemCpu = document.getElementById('escolha-cpu')
             imagemCpu.value = NumeroAleatorio(3)
             if (imagemCpu.value == 0) {
                 imagemCpu.classList.remove('pedra','tesoura')
@@ -49,13 +48,46 @@ elementos.forEach(function(elementoEscolhido) {
             }
             imagemCpu.setAttribute('src' , imagens[imagemCpu.value])
             imagemCpu.classList.add(classes[imagemCpu.value])
-            imagemCpu.style.opacity = 0.9
+
         }, 100);
+
+        let divResultado = document.querySelector('#resultado');
+        let textoResultado = divResultado.querySelector('.texto-resultado')
+
+        setTimeout(function() {
+            clearInterval(movimentoAleatorio);
+            divResultado.style.display = 'flex';
+
+            console.log(elementoEscolhido.value, imagemCpu.value );
+            if (elementoEscolhido.value == imagemCpu.value) {
+                console.log('aaa');
+                textoResultado.textContent = 'empate'
+            } else if (resultado(elementoEscolhido, imagemCpu)) {
+                textoResultado.textContent = 'vitória'
+                meuScore.textContent++
+            } else if (!resultado(elementoEscolhido, imagemCpu)) {
+                textoResultado.textContent = 'derrota'
+                meuScore.textContent--
+            }
+        }, 2000);
+
+        setTimeout(function() {
+            divResultado.style.opacity = 0.9;
+        }, 3000);
+
+        
      
     }
 });
 
+function resultado (elementoEscolhido, imagemCpu) {
+    if (elementoEscolhido.value == 0 && imagemCpu.value == 2 || elementoEscolhido.value == 1 && imagemCpu.value == 0 || elementoEscolhido.value == 2 && imagemCpu.value == 1) {
+        return true
 
+    } else if (elementoEscolhido.value == 0 && imagemCpu.value == 1 || elementoEscolhido.value == 1 && imagemCpu.value == 2 || elementoEscolhido.value == 2 && imagemCpu.value == 0){
+        return false
+    }
+}
 
 function funcaoModal (num1 , num2) {
     let modalRegras = document.querySelector('#modal');
