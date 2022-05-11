@@ -6,9 +6,9 @@ let contador = 0;
 let meuScore = document.getElementById('contador');
 
 const imagens = [
-    '/images/icon-paper.svg',
-    '/images/icon-scissors.svg',
-    '/images/icon-rock.svg'
+    'images/icon-paper.svg',
+    'images/icon-scissors.svg',
+    'images/icon-rock.svg'
 ]
 
 let elementos = [
