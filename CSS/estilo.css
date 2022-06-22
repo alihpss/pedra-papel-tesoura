@@ -10,7 +10,7 @@ body {
     font-family: 'Barlow Semi Condensed';
 }
 
-header {
+#cabecalho {
     width: 45%;
     margin: 8px auto;
     display: flex;
@@ -28,7 +28,7 @@ header {
 #score {
     background: white;
     font-size: 15px;
-    width: 20%;
+    width: 8rem;
     text-align: center;
     border-radius: 10px;
     letter-spacing: 2px;
@@ -67,7 +67,7 @@ header {
 
 #fundo {
     width: 60%;
-    margin-top: 17%;
+    margin-top: 3.5rem;
 }
 
 #div-papel {
@@ -130,17 +130,17 @@ header {
 }
 
 #botao-regras {
-    width: 8em;
+    width: 8rem;
     background: #161b3e;
     color: #dddddd;
     font-weight: 600;
     border: 2px solid #adaaaa;
     border-radius: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    height: 3em;
+    height: 3rem;
     float: right;
-    margin-right: 3%;
+    margin: 3rem;
 }
 
 #botao-regras:hover {
@@ -268,3 +268,30 @@ section div p {
     0px 0px 0px 70px #b9b9b914;
 }
 
+@media screen and (max-width: 756px) {
+    #cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    #cabecalho div {
+        margin: 1rem 0 0 1rem;
+        width: 50%;
+        height: 6.5rem;
+    }
+
+    #botao-resultado {
+        height: 2rem;
+    }
+
+    .fundosEscolhas {
+        padding: 4px;
+        width: 4rem;
+    }
+
+    .texto-resultado {
+        font-size: 2.2rem;
+    }
+}
