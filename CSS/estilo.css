@@ -294,4 +294,9 @@ section div p {
     .texto-resultado {
         font-size: 2.2rem;
     }
+
+    #modal {
+        width: 55%;
+        align-items: center;
+    }
 }
